@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Verificaci&#xf3;n Formal de Programas","children":[{"content":"Prop&#xf3;sito","children":[{"content":"Demostrar matem&#xe1;ticamente que un programa cumple su especificaci&#xf3;n.","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Surge porque las pruebas tradicionales no garantizan la ausencia total de errores.","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Es especialmente importante en sistemas cr&#xed;ticos donde un fallo puede generar consecuencias graves.","children":[],"payload":{"tag":"li","lines":"11,13"}}],"payload":{"tag":"h2","lines":"8,9"}},{"content":"Programa y Estado","children":[{"content":"Un programa transforma estados iniciales en estados finales.","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"El estado de un programa corresponde al conjunto de valores de sus variables en un instante determinado.","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"Existen variables de entrada, salida y auxiliares.","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"La ejecuci&#xf3;n puede entenderse como una secuencia de transformaciones entre estados.","children":[],"payload":{"tag":"li","lines":"17,19"}}],"payload":{"tag":"h2","lines":"13,14"}},{"content":"Especificaci&#xf3;n del Programa","children":[{"content":"Define qu&#xe9; debe hacer el programa, no c&#xf3;mo debe hacerlo.","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Est&#xe1; compuesta por:","children":[{"content":"<strong>Precondici&#xf3;n (Q):</strong> condiciones que deben cumplir los estados iniciales.","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"<strong>Poscondici&#xf3;n (R):</strong> condiciones que deben cumplir los estados finales y relaci&#xf3;n entre entradas y salidas.","children":[],"payload":{"tag":"li","lines":"23,24"}}],"payload":{"tag":"li","lines":"21,24"}},{"content":"Utiliza variables sem&#xe1;nticas para representar los valores iniciales que no pueden modificarse durante la ejecuci&#xf3;n.","children":[],"payload":{"tag":"li","lines":"24,26"}}],"payload":{"tag":"h2","lines":"19,20"}},{"content":"L&#xf3;gica de Hoare","children":[{"content":"Propuesta por Tony Hoare en 1969.","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Permite razonar formalmente sobre la correcci&#xf3;n de programas.","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"Su elemento fundamental es la <strong>Tripla de Hoare</strong>:","children":[{"content":"{Q} S {R}","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"Q = Precondici&#xf3;n","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"S = Programa","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"R = Poscondici&#xf3;n","children":[],"payload":{"tag":"li","lines":"33,34"}}],"payload":{"tag":"li","lines":"29,34"}},{"content":"Una tripla es v&#xe1;lida si todo estado que satisface Q, al ejecutar S, termina en un estado que satisface R.","children":[],"payload":{"tag":"li","lines":"34,36"}}],"payload":{"tag":"h2","lines":"26,27"}},{"content":"Correcci&#xf3;n y Propiedades","children":[{"content":"Propiedades de las Triplas de Hoare","children":[{"content":"Precondici&#xf3;n vac&#xed;a: {falso}S{R} siempre es v&#xe1;lida.","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"Ley del milagro excluido: {Q}S{falso} solo es v&#xe1;lida si Q es falso.","children":[],"payload":{"tag":"li","lines":"47,48"}},{"content":"Fortalecimiento de precondici&#xf3;n: si P &#x21d2; Q, entonces {P}S{R}.","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"Debilitamiento de poscondici&#xf3;n: si R &#x21d2; P, entonces {Q}S{P}.","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"Conjunci&#xf3;n de poscondiciones: {Q}S{R &#x2227; P}.","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"Disyunci&#xf3;n de precondiciones: {Q &#x2228; P}S{R}.","children":[],"payload":{"tag":"li","lines":"51,53"}}],"payload":{"tag":"h3","lines":"45,46"}}],"payload":{"tag":"h2","lines":"36,37"}},{"content":"Ejemplo Aplicado: M&#xe1;ximo Com&#xfa;n Divisor (MCD)","children":[{"content":"Entradas: a y b.","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"Precondici&#xf3;n: a &#x2265; 0, b &#x2265; 0 y a + b &gt; 0.","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"Poscondici&#xf3;n: resultado = MCD(A,B).","children":[],"payload":{"tag":"li","lines":"56,57"}},{"content":"Ilustra c&#xf3;mo la especificaci&#xf3;n describe el resultado esperado independientemente del algoritmo utilizado.","children":[],"payload":{"tag":"li","lines":"57,58"}}],"payload":{"tag":"h2","lines":"53,54"}}],"payload":{"tag":"h1","lines":"6,7"}},{"colorFreezeLevel":2})</script>
+</body>
+</html>
